@@ -94,24 +94,34 @@ const images = [
 
 // creo una variabile per selezionare div.img-card
 
-let containerImgCard = document.querySelector(".img-card");
-console.log("ho selezionato" , containerImgCard);
+let containerCarousel = document.querySelector(".carousel");
+console.log("ho selezionato" , containerCarousel);
 
 // creo una variabile che corrisponderà a ogni singolo indice di images 
 
 let progImage;
 
 // creo un ciclo for Each per ciclare l'array Images 
+// Dentro al ciclo voglio creare:
+// un div (class img-card) che deve contenere image 
+// un h3 che conterrà title 
+// un p che conterrà text 
 
-images.forEach(( element, index) => {
-    console.log(element, index);
-    let progImage = (element, index );
-    console.log("ho salvato le info di ogni indice di Images in:", progImage);
-})
 
-// Ho ciclato ogni elemento dell'array e ha funzionato...
-// Solo che mi sostituisce il valore di progImage ogni volta che riparte il ciclo
-// Ora devo scrivere dentro img-card 
 
-containerImgCard.innerHTML = progImage;
+images.forEach((immagineSingola) => {
+    // Creo una variabile a cui assegnerò un elemento html 
+    let progImage = document.createElement("div");
+    // Gli aggiungo la classe img-card 
+    progImage.classList.add("img-card");
+
+    // Dentro a div.img-card scrivo: 
+    progImage.innerHTML =
+        "<img src='" + immagineSingola.image + "'>" +
+        "<h3>" + immagineSingola.title + "</h3>" +
+        "<p>" + immagineSingola.text + "</p>";
+
+    // Appendo il nuovo contenuto al contenitore
+    containerCarousel.appendChild(progImage);
+});
 
