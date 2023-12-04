@@ -105,11 +105,13 @@ let progImage;
 
 images.forEach(( element, index) => {
     console.log(element, index);
-  
+    let progImage = (element, index );
+    console.log("ho salvato le info di ogni indice di Images in:", progImage);
 })
 
 // Ho ciclato ogni elemento dell'array e ha funzionato...
-Ora devo 
+// Solo che mi sostituisce il valore di progImage ogni volta che riparte il ciclo
+// Ora devo scrivere dentro img-card 
 
-// containerImgCard.innerHTML(images[i]);
+containerImgCard.innerHTML = progImage;
 
